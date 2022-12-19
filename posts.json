@@ -1,4 +1,10 @@
-{
-  "Китайская еда": "china.jpg",
-  "Русская еда": "russian.jpg"
-}
+[
+  {
+    "description": "Китайская еда",
+    "image": "china.jpg"
+  },
+  {
+    "description": "Русская еда",
+    "image": "russian.jpg"
+  }
+]

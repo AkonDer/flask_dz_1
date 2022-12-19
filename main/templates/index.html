@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Каталог</title>
@@ -9,6 +9,9 @@
     <form action="/main/" >
         <input type="text" name="find">
         <input type="submit" value="Найти">
+        {% for item in data %}
+        <p>{{ item.description }} : {{ item.image }} </p>
+        {% endfor %}
     </form>
 </body>
 </html>
