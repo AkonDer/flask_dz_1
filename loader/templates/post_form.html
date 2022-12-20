@@ -10,10 +10,10 @@
 <div>
     <h1>Добавить пост</h1>
     <p>Картинка к посту</p>
-    <form action="/post/">
+    <form action="/post/" method="post" enctype="multipart/form-data">
         <input type="file" name="picture">
         <p>Текст к посту</p>
-        <p><textarea name="text" cols="35" rows="5"></textarea></p>
+        <p><textarea name="description" cols="35" rows="5"></textarea></p>
         <input type="submit" value="Отправить">
     </form>
 

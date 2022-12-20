@@ -1,4 +1,5 @@
-from flask import send_from_directory, Blueprint, render_template
+from flask import send_from_directory, Blueprint, render_template, request
+from utilities import *
 
 loader_blueprint = Blueprint('loader_blueprint', __name__, template_folder='templates')
 
@@ -15,6 +16,9 @@ def post_page():
 
 @loader_blueprint.route("/post/", methods=['POST'])
 def upload_page():
-    return render_template("post_uploaded.html")
-
-
+    picture = request.files.get("picture")
+    description = request.form.get("description")
+    filename = picture.filename
+    picture.save(f"./uploads/{filename}")
+    save_json(description, filename)
+    return render_template("post_uploaded.html", filename=filename, description=description)
