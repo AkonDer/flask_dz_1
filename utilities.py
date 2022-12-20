@@ -26,10 +26,8 @@ def download_json():
 
 def search(dic, word):
     """Поиск в словаре по слову"""
-    new_list = []
-    for item in dic:
-        if word.lower() in item["description"].lower().split(' '):
-            new_list.append(item)
+    new_list = [x for x in dic if word.lower() in x["description"].lower()]
+
     if new_list:
         return new_list
     else:

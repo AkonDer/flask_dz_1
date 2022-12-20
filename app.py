@@ -12,4 +12,4 @@ app = Flask(__name__)
 app.register_blueprint(main_blueprint)
 app.register_blueprint(loader_blueprint)
 
-app.run()
+app.run(debug=True)
