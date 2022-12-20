@@ -1,11 +1,24 @@
 import json
+import logging
+from json import JSONDecodeError
+
+logging.basicConfig(filename="basic.log", level=logging.INFO)
 
 
 def download_json():
     """Загрузка данных из файла json"""
-    with open("posts.json", "r", encoding='utf-8') as file:
-        data = json.load(file)
-    return data
+    try:
+        with open("posts.json", "r", encoding='utf-8') as file:
+            data = json.load(file)
+            return data
+
+    except FileNotFoundError:
+        logging.exception("Файл не найден")
+        return False
+
+    except JSONDecodeError:
+        logging.exception("Файл не удается преобразовать")
+        return False
 
 
 def search(dic, word):
