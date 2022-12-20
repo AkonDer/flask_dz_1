@@ -14,4 +14,4 @@ def post_list_page():
     data = download_json()
     word = request.args.get('find')
     _list = search(data, word)
-    return render_template("post_list.html", data=_list)
+    return render_template("post_list.html", data=_list, word=word)

@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/mysite.css">
     <title>Список постов</title>
 </head>
 <body>
+    <h2>Результат поиска по слову: {{ word }}</h2>
     {% for item in data %}
-    <div>
-        <img src="/uploads/{{ item.image }}">
-    </div>
-    <div>
-        {{ item.description }}
+    <div class="main">
+        <div class="item" align="center">
+            <img src="/uploads/{{ item.image }}">
+        </div>
+        <div class="text">
+            {{ item.description }}
+        </div>
+        <hr>
+        <br>
     </div>
     {% endfor %}
 </body>
