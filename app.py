@@ -1,7 +1,11 @@
+import logging
+
 from flask import Flask
 
 from main.views import main_blueprint
 from loader.views import loader_blueprint
+
+logging.basicConfig(filename="basic.log", level=logging.INFO)
 
 app = Flask(__name__)
 

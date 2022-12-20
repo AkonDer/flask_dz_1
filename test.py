@@ -1,31 +1,10 @@
-data = [
-    {
-        "description": "Китайская еда",
-        "image": "china.jpg"
-    },
-    {
-        "description": "Русская еда",
-        "image": "russian.jpg"
-    },
-    {
-        "description": "Кошка и собака",
-        "image": "cat and dog.jpg"
-    }
-]
+file_name = "dsdfsd.fff"
 
-print(data)
+def check_file_type(file):
+    types = [".jpg", ".png"]
+    for type in types:
+        if type in file:
+            return True
+        else: return False
 
-
-def search(dic, word):
-    """Поиск в словаре по слову"""
-    new_list = []
-    for item in dic:
-        if word in item["description"].split(' '):
-            new_list.append(item)
-    if new_list:
-        return new_list
-    else:
-        return ["Ничего не найдено"]
-
-
-print(search(data, "sdfsd"))
+print(check_file_type(file_name))

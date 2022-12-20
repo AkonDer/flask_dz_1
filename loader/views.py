@@ -1,3 +1,5 @@
+import logging
+
 from flask import send_from_directory, Blueprint, render_template, request
 from utilities import *
 
@@ -19,6 +21,11 @@ def upload_page():
     picture = request.files.get("picture")
     description = request.form.get("description")
     filename = picture.filename
-    picture.save(f"./uploads/{filename}")
-    save_json(description, filename)
-    return render_template("post_uploaded.html", filename=filename, description=description)
+    if check_file_type(filename):
+        picture.save(f"./uploads/{filename}")
+        save_json(description, filename)
+        return render_template("post_uploaded.html", filename=filename, description=description)
+    else:
+        logging.exception("Неправильный тип файла")
+        return "Неправильный тип файла"
+

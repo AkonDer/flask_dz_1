@@ -2,7 +2,10 @@ import json
 import logging
 from json import JSONDecodeError
 
-logging.basicConfig(filename="basic.log", level=logging.INFO)
+
+class WrongFiletypeError(Exception):
+    def init(self, message=None):
+        super().init(message)
 
 
 def download_json():
@@ -40,3 +43,11 @@ def save_json(description, picture_name):
     data.append({"description": description, "image": picture_name})
     with open("posts.json", "w", encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=3)
+
+
+def check_file_type(file):
+    types = [".jpg", ".png"]
+    for type in types:
+        if type in file:
+            return True
+        else: return False
