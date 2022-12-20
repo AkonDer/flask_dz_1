@@ -5,13 +5,10 @@
     <title>Каталог</title>
 </head>
 <body>
-    <h1>Поиск постов</h1>
-    <form action="/main/" >
-        <input type="text" name="find">
-        <input type="submit" value="Найти">
-        {% for item in data %}
-        <p>{{ item.description }} : {{ item.image }} </p>
-        {% endfor %}
-    </form>
+<h1>Поиск постов</h1>
+<form action="/search/">
+    <input type="text" name="find" value="еда">
+    <input type="submit" value="Найти">
+</form>
 </body>
 </html>
