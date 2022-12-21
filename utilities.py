@@ -4,8 +4,8 @@ from json import JSONDecodeError
 
 
 class WrongFiletypeError(Exception):
-    def init(self, message=None):
-        super().init(message)
+    def __init__(self, message=None):
+        super().__init__(message)
 
 
 def download_json():
