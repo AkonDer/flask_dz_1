@@ -1,10 +1,9 @@
-file_name = "dsdfsd.fff"
+file_name = "dsdfsd.ee"
+
 
 def check_file_type(file):
     types = [".jpg", ".png"]
-    for type in types:
-        if type in file:
-            return True
-        else: return False
+    return any(x for x in types if x in file)
+
 
 print(check_file_type(file_name))

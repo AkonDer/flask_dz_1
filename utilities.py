@@ -45,7 +45,4 @@ def save_json(description, picture_name):
 
 def check_file_type(file):
     types = [".jpg", ".png"]
-    for type in types:
-        if type in file:
-            return True
-        else: return False
+    return any(x for x in types if x in file)
